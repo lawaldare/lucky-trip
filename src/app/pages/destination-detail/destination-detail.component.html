@@ -20,8 +20,8 @@
         <h2 class="detail__blogs__content__header light-blue">Blog Posts</h2>
         <div class="detail__blogs__content__container">
           <div class="detail__blogs__content__container__card" *ngFor="let activity of detail.activities">
-            <img nz-image [nzSrc]="activity.thumbnail.image_url" [alt]="activity.city" nzDisablePreview="true"
-              [nzFallback]="'assets/no-image.png'">
+            <img nz-image [nzSrc]="activity.thumbnail.image_url" [alt]="activity.city"
+              [nzFallback]="'assets/no-image.png'" [nzPlaceholder]="'assets/placeholder.gif'">
           </div>
         </div>
       </div>
