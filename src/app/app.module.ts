@@ -17,6 +17,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 
+import { NzImageModule } from 'ng-zorro-antd/image';
+
+
 
 
 
@@ -38,7 +41,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     HttpClientModule,
     NzSpinModule,
     NzMessageModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NzImageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

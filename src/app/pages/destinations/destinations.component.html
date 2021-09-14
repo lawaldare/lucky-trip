@@ -21,7 +21,8 @@
       <div class="destination__results__box__content">
         <div class="destination__results__box__content__card" *ngFor="let ds of destinations"
           (click)="checkDetail(ds.id)">
-          <img [src]="ds.image_url" [alt]="ds.city">
+          <img nz-image [nzSrc]="ds.image_url" [alt]="ds.city" nzDisablePreview="true"
+            [nzFallback]="'assets/no-image.png'">
         </div>
       </div>
     </div>
