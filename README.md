@@ -14,4 +14,4 @@ The project showcase over 350 destionations and 1500 blog posts using the LuckyT
 
 ## Hosted Link
 
-This is the [hosted link to the project](https://pictures-of-the-day.netlify.app/).
+This is the [hosted link to the project](https://lucky-trip.netlify.app/).
