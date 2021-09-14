@@ -1,0 +1,39 @@
+<div class="detail">
+  <ng-container *ngIf="dataFetched">
+    <section class="detail__hero" [style.background-image]="'url('+detail.destination.thumbnail.image_url+')'">
+      <app-navbar></app-navbar>
+      <div class="detail__hero__search-box">
+        <i nz-icon nzType="search" nzTheme="outline" class="detail__hero__search-box__icon"></i>
+        <input nz-input placeholder="Search for city..." [(ngModel)]="searchTerm" name="searchTerm"
+          class="detail__hero__search-box__input" [nzBorderless]="true" />
+        <button class="detail__hero__search-box__button" (click)="search()">GO</button>
+      </div>
+      <div class="detail__hero__content">
+        <h1 class="detail__hero__content__city">{{ detail.destination.city }}</h1>
+        <h3 class="detail__hero__content__country">{{ detail.destination.country_name }}</h3>
+      </div>
+    </section>
+    <section class="detail__blogs">
+      <div class="detail__blogs__content">
+        <h2 class="detail__blogs__content__header yellow">What's it like?</h2>
+        <p class="detail__blogs__content__description">{{ detail.destination.description.text }}</p>
+        <h2 class="detail__blogs__content__header light-blue">Blog Posts</h2>
+        <div class="detail__blogs__content__container">
+          <div class="detail__blogs__content__container__card" *ngFor="let activity of detail.activities">
+            <img [src]="activity.thumbnail.image_url" [alt]="activity.city">
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="detail__footer">
+      <h3 class="detail__footer__header">Find a trip to {{ detail.destination.city }}</h3>
+      <p class="detail__footer__sub-header">Tap the Lucky button to get started...</p>
+      <div class="detail__footer__button">
+        <img src="assets/lucky_button.png" alt="button">
+      </div>
+    </footer>
+  </ng-container>
+  <div class="pictures__loader" *ngIf="loading">
+    <nz-spin nzSimple [nzSize]="'large'"></nz-spin>
+  </div>
+</div>

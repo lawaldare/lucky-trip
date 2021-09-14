@@ -1,0 +1,30 @@
+<div class="destination">
+  <section class="destination__hero">
+    <app-navbar></app-navbar>
+    <div class="destination__hero__content">
+      <h1 class="destination__hero__content__header">Search LuckyTrip</h1>
+      <p class="destination__hero__content__description">350 destinations, 1500 blog posts, Unlimited Trips</p>
+      <div class="destination__hero__content__search-box">
+        <i nz-icon nzType="search" nzTheme="outline" class="destination__hero__content__search-box__icon"></i>
+        <input nz-input placeholder="Enter a Destination..." [(ngModel)]="searchTerm" name="searchTerm"
+          class="destination__hero__content__search-box__input" [nzBorderless]="true" />
+        <button class="destination__hero__content__search-box__button" (click)="search()">GO</button>
+      </div>
+    </div>
+  </section>
+  <section class="destination__results">
+    <div class="pictures__loader" *ngIf="loading">
+      <nz-spin nzSimple [nzSize]="'large'"></nz-spin>
+    </div>
+    <div class="destination__results__box" *ngIf="dataFetched">
+      <h3 class="destination__results__box__content__header">Trending</h3>
+      <div class="destination__results__box__content">
+        <div class="destination__results__box__content__card" *ngFor="let ds of destinations"
+          (click)="checkDetail(ds.id)">
+          <img [src]="ds.image_url" [alt]="ds.city">
+        </div>
+      </div>
+    </div>
+    <p class="destination__results__text" *ngIf="noResultFound">No results found!</p>
+  </section>
+</div>
